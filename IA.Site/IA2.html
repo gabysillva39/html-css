@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cake's Bakers</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Playfair+Display:wght@700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background-color: #fff;
+      color: #633;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #F8C8DC;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: #633;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      color: #633;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #a33;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+      background: #fff0f5;
+      gap: 2rem;
+    }
+
+    .hero img {
+      max-width: 350px;
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .hero-text {
+      max-width: 500px;
+    }
+
+    .hero-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #a33;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .sobre, .menu, .contato {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .sobre h2, .menu h2, .contato h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #a33;
+    }
+
+    .sobre p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .menu-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .menu-item {
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 1rem;
+      transition: transform 0.3s;
+    }
+
+    .menu-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .menu-item img {
+      width: 100%;
+      border-radius: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      background: #F8C8DC;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #633;
+    }
+
+    .support-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #F8C8DC;
+      color: #633;
+      border: none;
+      padding: 1rem;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: background 0.3s;
+    }
+
+    .support-btn:hover {
+      background: #a33;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cake's Bakers</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#menu">Menu</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <img src="https://www.sabornamesa.com.br/media/k2/items/cache/15abde3c81505959f6d2610e3cdfbe51_XL.jpg" alt="Bolo em destaque">
+    <div class="hero-text">
+      <h2>Bem-vindo à Cake's Bakers</h2>
+      <p>Uma confeitaria onde cada fatia conta uma história doce. Bolos, tortas e sobremesas feitas com amor para adoçar sua vida.</p>
+    </div>
+  </section>
+
+  <section class="sobre" id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>Na <strong>Cake's Bakers</strong>, acreditamos que confeitaria é uma arte. Fundada com paixão pela doçura da vida, nossa missão é levar momentos especiais à sua mesa com receitas tradicionais e um toque moderno de criatividade. Cada bolo é preparado com ingredientes selecionados e muito carinho, para transformar ocasiões em lembranças inesquecíveis.</p>
+  </section>
+
+  <section class="menu" id="menu">
+    <h2>Nosso Menu</h2>
+    <div class="menu-items">
+      <div class="menu-item">
+        <img src="img/bolo-chocolate.jpg" alt="Bolo de Chocolate">
+        <h3>Bolo de Chocolate</h3>
+        <p>Clássico, fofinho e irresistível, coberto com ganache artesanal.</p>
+      </div>
+      <div class="menu-item">
+        <img src="img/bolo-morango.jpg" alt="Bolo de Morango">
+        <h3>Bolo de Morango</h3>
+        <p>Delicado, recheado com creme leve e morangos frescos.</p>
+      </div>
+      <div class="menu-item">
+        <img src="img/torta-frutas.jpg" alt="Torta de Frutas">
+        <h3>Torta de Frutas</h3>
+        <p>Colorida e refrescante, com base crocante e creme especial.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contato" id="contato">
+    <h2>Contato</h2>
+    <p>📍 Rua dos Doces, 123 - Cidade Saborosa</p>
+    <p>📞 (11) 99999-9999</p>
+    <p>📧 contato@cakesbakers.com</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Cake's Bakers - Todos os direitos reservados.</p>
+  </footer>
+
+  <button class="support-btn">💬</button>
+</body>
+</html>
+
+</body>
+</html>

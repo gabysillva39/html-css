@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gunna Music — Loja de Álbuns</title>
+  <meta name="description" content="Gunna Music — sua loja de álbuns, vinis e CDs. Descubra artistas, coleções e lançamentos." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#633000; /* marrom */
+      --accent:#CA832D; /* dourado */
+      --bg:#faf7f4;
+      --ink:#2a1a12;
+      --muted:#8a6f5f;
+      --card:#ffffff;
+      --ring: 0 10px 30px rgba(99,48,0,.12);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0; color:var(--ink); background:radial-gradient(1200px 600px at 10% -10%, #CA832D15, transparent 60%),
+      radial-gradient(1200px 600px at 100% 0%, #63300010, transparent 60%), var(--bg);
+      font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      line-height:1.6;
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+    .container{max-width:1180px; margin-inline:auto; padding:0 20px}
+    /* Header */
+    .topbar{position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.2) blur(10px); background:rgba(255,255,255,.7); border-bottom:1px solid #63300020}
+    .nav{display:flex; align-items:center; justify-content:space-between; height:70px}
+    .brand{display:flex; gap:12px; align-items:center}
+    .logo{width:40px; height:40px; border-radius:12px; background:conic-gradient(from 180deg, var(--accent), var(--brand)); box-shadow: var(--ring)}
+    .brand h1{font-family:"Playfair Display", serif; font-weight:700; font-size:1.35rem; letter-spacing:.5px}
+    .brand small{display:block; color:var(--muted); font-weight:500; letter-spacing:.4px; margin-top:-6px}
+    .menu{display:flex; gap:18px}
+    .menu a{padding:10px 12px; border-radius:12px; font-weight:500; color:#4b372c}
+    .menu a:hover{background:linear-gradient(0deg, #CA832D14, #CA832D14); color:var(--brand)}
+    .actions{display:flex; align-items:center; gap:12px}
+    .icon-btn{position:relative; display:grid; place-items:center; width:42px; height:42px; border-radius:14px; background:#fff; border:1px solid #63300022; box-shadow: var(--ring); cursor:pointer}
+    .icon-btn:hover{transform:translateY(-1px)}
+    .badge{position:absolute; top:-6px; right:-6px; background:var(--accent); color:#fff; min-width:20px; height:20px; border-radius:999px; display:grid; place-items:center; font-size:.75rem; font-weight:700; box-shadow:0 4px 16px rgba(202,131,45,.5)}
+    .search{display:flex; align-items:center; gap:10px; background:#fff; border:1px solid #63300022; border-radius:14px; padding:10px 12px; box-shadow:var(--ring)}
+    .search input{border:0; outline:0; width:230px; font-size:.95rem}
+
+    /* Hero */
+    .hero{padding:70px 0 40px}
+    .hero-grid{display:grid; grid-template-columns:1.2fr 1fr; gap:40px; align-items:center}
+    .eyebrow{display:inline-flex; align-items:center; gap:8px; background:#63300010; color:#4b2a18; border:1px solid #63300020; padding:6px 10px; border-radius:999px; font-weight:600; letter-spacing:.2px}
+    .title{font-family:"Playfair Display", serif; font-size:clamp(2rem, 4vw, 3.2rem); line-height:1.15; margin:16px 0}
+    .title strong{color:var(--brand)}
+    .lede{font-size:1.06rem; color:#5a4539}
+    .cta{display:flex; gap:12px; margin-top:22px}
+    .btn{appearance:none; border:0; padding:12px 18px; border-radius:14px; font-weight:700; cursor:pointer; box-shadow:var(--ring)}
+    .btn.primary{background:linear-gradient(180deg, #CA832D, #b06f26); color:#fff}
+    .btn.ghost{background:#fff; color:var(--brand); border:1px solid #63300030}
+    .feature-card{background:linear-gradient(180deg,#fff, #fff8f1); border:1px solid #63300022; border-radius:22px; padding:18px; display:grid; grid-template-columns:120px 1fr; gap:16px; align-items:center; box-shadow:var(--ring)}
+    .feature-card .tags{display:flex; gap:8px; flex-wrap:wrap}
+    .tag{background:#63300010; border:1px solid #63300022; color:#4b372c; padding:6px 10px; border-radius:999px; font-weight:600; font-size:.8rem}
+    .cover-wrap{position:relative}
+    .cover{border-radius:22px; border:1px solid #63300022; box-shadow:0 30px 60px rgba(99,48,0,.25)}
+    .sticker{position:absolute; right:-14px; top:-14px; background:var(--brand); color:#fff; padding:10px 14px; border-radius:14px; font-weight:700; transform:rotate(6deg); box-shadow:0 10px 30px rgba(99,48,0,.4)}
+
+    /* Sections */
+    section{padding:60px 0}
+    .section-title{font-family:"Playfair Display", serif; font-size:2rem; margin:0 0 24px}
+    .grid{display:grid; gap:18px}
+    .grid.products{grid-template-columns:repeat(auto-fill, minmax(220px,1fr))}
+    .grid.artists{grid-template-columns:repeat(auto-fill, minmax(260px,1fr))}
+
+    .card{background:var(--card); border:1px solid #63300022; border-radius:18px; padding:14px; box-shadow:var(--ring); display:flex; flex-direction:column; gap:10px}
+    .price{font-weight:800; color:var(--brand)}
+    .kicker{color:var(--muted); font-weight:600; font-size:.85rem}
+    .card .actions{margin-top:auto; display:flex; gap:10px}
+
+    /* About */
+    .about{background:linear-gradient(180deg, #fff, #fff8f1); border-top:1px solid #63300020; border-bottom:1px solid #63300020}
+    .about p{max-width:800px}
+
+    /* Footer */
+    footer{padding:40px 0; color:#5f4a3e}
+    .foot{display:grid; grid-template-columns:1fr auto; gap:20px; align-items:center; border-top:1px dashed #63300033; padding-top:20px}
+
+    /* Cart Drawer */
+    .drawer{position:fixed; inset:0; pointer-events:none}
+    .drawer.open{pointer-events:auto}
+    .drawer .backdrop{position:absolute; inset:0; background:rgba(0,0,0,.2); opacity:0; transition:.25s}
+    .drawer.open .backdrop{opacity:1}
+    .panel{position:absolute; right:0; top:0; bottom:0; width:min(420px, 92vw); background:#fff; border-left:1px solid #63300020; box-shadow: -20px 0 40px rgba(0,0,0,.1); transform:translateX(100%); transition:.3s}
+    .drawer.open .panel{transform:none}
+    .panel header{display:flex; align-items:center; justify-content:space-between; padding:16px 16px; border-bottom:1px solid #63300022}
+    .cart-items{display:flex; flex-direction:column; gap:12px; padding:16px; max-height:55vh; overflow:auto}
+    .cart-item{display:grid; grid-template-columns:64px 1fr auto; gap:12px; align-items:center; border:1px solid #63300022; border-radius:12px; padding:10px}
+    .qty{display:flex; align-items:center; gap:8px}
+    .qty button{width:28px; height:28px; border-radius:9px; border:1px solid #63300033; background:#fff; font-weight:800; cursor:pointer}
+    .panel footer{border-top:1px solid #63300022; padding:16px}
+
+    /* Support Floating */
+    .support{position:fixed; right:20px; bottom:20px; z-index:60}
+    .support .fab{width:56px; height:56px; border-radius:16px; display:grid; place-items:center; background:var(--accent); color:#fff; box-shadow:0 18px 30px rgba(202,131,45,.4); cursor:pointer}
+    .support .fab:hover{transform:translateY(-2px)}
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr;}
+      .search input{width:140px}
+      .menu{display:none}
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <div class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Gunna Music</h1>
+          <small>álbuns • vinis • artistas</small>
+        </div>
+      </div>
+      <nav class="menu" aria-label="Primária">
+        <a href="#home">Home</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#artistas">Artistas</a>
+        <a href="#sobre">Sobre</a>
+      </nav>
+      <div class="actions">
+        <div class="search" role="search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input id="q" type="search" placeholder="Buscar álbuns ou artistas…" />
+        </div>
+        <button class="icon-btn" id="openCart" aria-label="Abrir carrinho">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 12.39a2 2 0 0 0 2 1.61h7.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span class="badge" id="cartCount">0</span>
+        </button>
+        <div class="icon-btn" title="Suporte" aria-label="Suporte">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4"/><path d="M21 15v2a2 2 0 0 1-2 2h-3l-4 3v-3H7a2 2 0 0 1-2-2v-2"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header id="home" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Destaque exclusivo</span>
+        <h2 class="title">Conheça o novo <strong>Alter Ego da Lisa</strong></h2>
+        <p class="lede">Uma viagem sonora delicada, intensa e elegante. Edição especial com encarte premium, acabamento fosco e faixas bônus inéditas.</p>
+        <div class="cta">
+          <button class="btn primary" data-buy="lisa-deluxe">Comprar agora</button>
+          <a href="#produtos" class="btn ghost">Ver catálogo</a>
+        </div>
+        <div class="feature-card" style="margin-top:20px">
+          <img src="https://upload.wikimedia.org/wikipedia/pt/5/51/Lisa_%E2%80%94_Alter_Ego.png" alt="Capa do álbum Alter Ego da Lisa" width="120" height="120" style="border-radius:14px; object-fit:cover">
+          <div>
+            <div class="kicker">Edição Deluxe</div>
+            <div style="font-weight:700">Alter Ego da Lisa</div>
+            <div class="tags" style="margin:8px 0 10px">
+              <span class="tag">Vinil 180g</span>
+              <span class="tag">Tiragem limitada</span>
+              <span class="tag">Encarte artesanal</span>
+            </div>
+            <div class="price">R$ 79,90</div>
+          </div>
+        </div>
+      </div>
+      <div class="cover-wrap">
+        <span class="sticker">Novo</span>
+        <!-- Substitua a imagem abaixo pela arte oficial do álbum -->
+        <img class="cover" src="https://i.pinimg.com/736x/31/de/07/31de07168c32ae114414bff5d6552af6.jpg" alt="Capa do álbum Alter Ego da Lisa em destaque" />
+      </div>
+    </div>
+  </header>
+
+  <!-- PRODUTOS -->
+  <section id="produtos">
+    <div class="container">
+      <h3 class="section-title">Produtos</h3>
+      <div class="grid products" id="productGrid" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- ARTISTAS -->
+  <section id="artistas">
+    <div class="container">
+      <h3 class="section-title">Artistas em destaque</h3>
+      <div class="grid artists" id="artistGrid"></div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="about">
+    <div class="container">
+      <h3 class="section-title">Sobre a Gunna Music</h3>
+      <p>
+        Na Gunna Music, celebramos a música como arte que se toca com as mãos e com o coração.
+        Curadoria fina, prensagens superiores e um olhar carinhoso para cada detalhe — do acabamento da capa à experiência de unboxing.
+        Nosso design é delicado, nosso som é intenso.
+      </p>
+      <p>
+        Trabalhamos com edições exclusivas, lotes limitados e artistas que contam histórias.
+        Bem-vinda(o) à sua nova casa de álbuns.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container foot">
+      <div>© <span id="year"></span> Gunna Music — todos os direitos reservados.</div>
+      <div style="display:flex; gap:10px; align-items:center">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4"/><path d="M21 15v2a2 2 0 0 1-2 2h-3l-4 3v-3H7a2 2 0 0 1-2-2v-2"/></svg>
+        <a href="#" onclick="openSupport(event)">Suporte</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <div class="drawer" id="cartDrawer" aria-hidden="true" aria-label="Carrinho de compras">
+    <div class="backdrop" onclick="toggleCart(false)"></div>
+    <aside class="panel" role="dialog" aria-modal="true">
+      <header>
+        <strong>Carrinho</strong>
+        <button class="icon-btn" onclick="toggleCart(false)" aria-label="Fechar carrinho" title="Fechar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </header>
+      <div class="cart-items" id="cartItems"></div>
+      <footer>
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px">
+          <span style="font-weight:700">Subtotal</span>
+          <span class="price" id="subtotal">R$ 0,00</span>
+        </div>
+        <button class="btn primary" style="width:100%">Finalizar compra</button>
+        <p class="kicker" style="margin-top:8px">Frete e impostos calculados na finalização.</p>
+      </footer>
+    </aside>
+  </div>
+
+  <!-- SUPPORT FLOATING BUTTON -->
+  <div class="support">
+    <div class="fab" onclick="openSupport(event)" title="Falar com suporte" aria-label="Falar com suporte">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4"/><path d="M21 15v2a2 2 0 0 1-2 2h-3l-4 3v-3H7a2 2 0 0 1-2-2v-2"/></svg>
+    </div>
+  </div>
+
+  <script>
+    // Dados simulados (você pode integrar com uma API depois)
+    const PRODUCTS = [
+      { id:"lisa-deluxe", title:"Alter Ego da Lisa (Deluxe)", artist:"Lisa", price:79.9, cover:"./img/alter-ego-da-lisa.jpg", tags:["Vinil 180g", "Tiragem limitada"] },
+      { id:"lisa-standard", title:"Alter Ego da Lisa (CD)", artist:"Lisa", price:49.9, cover:"./img/alter-ego-da-lisa.jpg", tags:["CD", "Encarte"] },
+      { id:"gunna-classics", title:"Gunna Classics", artist:"Gunna", price:59.9, cover:"./img/gunna-classics.jpg", tags:["Coletânea", "CD"] },
+      { id:"live-sessions", title:"Live Sessions Vol. 1", artist:"Vários", price:69.9, cover:"./img/live-sessions.jpg", tags:["Ao vivo", "Vinil"] },
+      { id:"acoustic-nights", title:"Acoustic Nights", artist:"Aurora", price:42.9, cover:"./img/acoustic.jpg", tags:["CD", "Acústico"] },
+      { id:"sunset-vinyl", title:"Sunset Vinyl", artist:"Luna", price:99.0, cover:"./img/sunset.jpg", tags:["Vinil 180g", "Colorido"] },
+    ];
+
+    const ARTISTS = [
+      { name:"Lisa", role:"Cantora & Compositora", img:"./img/artist-lisa.jpg" },
+      { name:"Gunna", role:"Rapper", img:"./img/artist-gunna.jpg" },
+      { name:"Aurora", role:"Indie Folk", img:"./img/artist-aurora.jpg" },
+      { name:"Luna", role:"Dream Pop", img:"./img/artist-luna.jpg" },
+    ];
+
+    const cart = new Map();
+
+    const $ = s => document.querySelector(s);
+    const $$ = s => document.querySelectorAll(s);
+
+    function formatBRL(n){
+      return n.toLocaleString('pt-BR', { style:'currency', currency:'BRL' })
+    }
+
+    function renderProducts(list){
+      const q = $('#q').value.trim().toLowerCase();
+      const filtered = q ? list.filter(p => (p.title+" "+p.artist+" "+(p.tags||[]).join(' ')).toLowerCase().includes(q)) : list;
+      const grid = $('#productGrid');
+      grid.innerHTML = filtered.map(p => `
+        <article class="card" data-id="${p.id}">
+          <img src="${p.cover}" alt="Capa do álbum ${p.title}" style="border-radius:12px; aspect-ratio:1/1; object-fit:cover">
+          <div class="kicker">${p.artist}</div>
+          <h4 style="margin:0 0 6px">${p.title}</h4>
+          <div class="tags" style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px">
+            ${(p.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}
+          </div>
+          <div class="price">${formatBRL(p.price)}</div>
+          <div class="actions">
+            <button class="btn ghost" onclick="viewProduct('${p.id}')">Detalhes</button>
+            <button class="btn primary" onclick="addToCart('${p.id}')">Adicionar</button>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function renderArtists(){
+      const grid = $('#artistGrid');
+      grid.innerHTML = ARTISTS.map(a => `
+        <article class="card">
+          <img src="${a.img}" alt="Foto de ${a.name}" style="border-radius:12px; aspect-ratio:16/10; object-fit:cover">
+          <div class="kicker">${a.role}</div>
+          <h4 style="margin:0">${a.name}</h4>
+          <div style="display:flex; gap:10px; margin-top:8px">
+            <a class="btn ghost" href="#produtos">Ver lançamentos</a>
+            <button class="btn primary" onclick="alert('Siga ${a.name} nas redes!')">Seguir</button>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function updateCartBadge(){
+      const totalQty = Array.from(cart.values()).reduce((n, it) => n + it.qty, 0);
+      $('#cartCount').textContent = totalQty;
+    }
+
+    function renderCart(){
+      const wrap = $('#cartItems');
+      if(cart.size === 0){
+        wrap.innerHTML = `<div class="kicker">Seu carrinho está vazio.</div>`;
+      } else {
+        wrap.innerHTML = Array.from(cart.values()).map(item => `
+          <div class="cart-item">
+            <img src="${item.cover}" alt="Capa do álbum ${item.title}" style="border-radius:8px; aspect-ratio:1/1; object-fit:cover">
+            <div>
+              <div style="font-weight:700">${item.title}</div>
+              <div class="kicker">${item.artist||''}</div>
+              <div class="price">${formatBRL(item.price)}</div>
+            </div>
+            <div class="qty">
+              <button onclick="changeQty('${item.id}', -1)">-</button>
+              <div style="min-width:24px; text-align:center">${item.qty}</div>
+              <button onclick="changeQty('${item.id}', 1)">+</button>
+            </div>
+          </div>
+        `).join('');
+      }
+      const subtotal = Array.from(cart.values()).reduce((n, it) => n + it.qty * it.price, 0);
+      $('#subtotal').textContent = formatBRL(subtotal);
+      updateCartBadge();
+    }
+
+    function addToCart(id){
+      const p = PRODUCTS.find(x => x.id===id);
+      if(!p) return;
+      const existing = cart.get(id) || { ...p, qty:0 };
+      existing.qty++;
+      cart.set(id, existing);
+      renderCart();
+      toggleCart(true);
+    }
+
+    function changeQty(id, delta){
+      const it = cart.get(id);
+      if(!it) return;
+      it.qty += delta;
+      if(it.qty<=0){ cart.delete(id); }
+      renderCart();
+    }
+
+    function toggleCart(open){
+      const drawer = $('#cartDrawer');
+      if(open){
+        drawer.classList.add('open');
+        drawer.setAttribute('aria-hidden','false');
+      } else {
+        drawer.classList.remove('open');
+        drawer.setAttribute('aria-hidden','true');
+      }
+    }
+
+    function viewProduct(id){
+      const p = PRODUCTS.find(x => x.id===id);
+      if(!p) return;
+      const title = `${p.title} — ${p.artist}`;
+      const details = `${p.tags?.join(', ') || ''}`;
+      const html = `\n        <div style="display:grid; grid-template-columns:140px 1fr; gap:14px">\n          <img src="${p.cover}" alt="Capa do álbum ${p.title}" style="border-radius:12px; aspect-ratio:1/1; object-fit:cover">\n          <div>\n            <div class="kicker">${p.artist}</div>\n            <h3 style="margin:4px 0">${p.title}</h3>\n            <div style="margin:6px 0 10px; color:#5a4539">${details}</div>\n            <div class="price" style="margin-bottom:10px">${formatBRL(p.price)}</div>\n            <div style="display:flex; gap:10px">\n              <button class="btn primary" onclick="addToCart('${p.id}'); closeDialog()">Adicionar ao carrinho</button>\n              <button class="btn ghost" onclick="closeDialog()">Fechar</button>\n            </div>\n          </div>\n        </div>`;
+      openDialog(title, html);
+    }
+
+    // Pequeno diálogo acessível
+    let dialogEl;
+    function openDialog(title, inner){
+      closeDialog();
+      dialogEl = document.createElement('div');
+      dialogEl.role = 'dialog';
+      dialogEl.ariaModal = 'true';
+      dialogEl.className = 'drawer open';
+      dialogEl.innerHTML = `
+        <div class="backdrop" onclick="closeDialog()"></div>
+        <aside class="panel" style="max-width:720px; width:min(720px,96vw)">
+          <header>
+            <strong>${title}</strong>
+            <button class="icon-btn" onclick="closeDialog()" aria-label="Fechar">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+          </header>
+          <div style="padding:16px">${inner}</div>
+        </aside>`;
+      document.body.appendChild(dialogEl);
+    }
+    function closeDialog(){ if(dialogEl){ dialogEl.remove(); dialogEl=null; } }
+
+    // Suporte (mock)
+    function openSupport(e){
+      e && e.preventDefault();
+      openDialog('Suporte Gunna Music', `
+        <p class="kicker">Como podemos ajudar?</p>
+        <p>Envie uma mensagem para <a href="mailto:suporte@gunnamusic.com">suporte@gunnamusic.com</a> ou fale conosco no WhatsApp: <strong>(11) 99999‑9999</strong>.</p>
+        <p>Horário: seg–sex, 9h às 18h.</p>
+      `);
+    }
+
+    // Eventos
+    $('#openCart').addEventListener('click', () => toggleCart(true));
+    $('#q').addEventListener('input', () => renderProducts(PRODUCTS));
+
+    // Inicialização
+    renderProducts(PRODUCTS);
+    renderArtists();
+    renderCart();
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
+
