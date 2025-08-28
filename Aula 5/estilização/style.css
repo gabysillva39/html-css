@@ -1,0 +1,40 @@
+body{
+    background-color: aliceblue;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.introdução{
+    text-align: center;
+
+}
+
+.bloco1{
+    background-color: beige;
+    border: solid black;
+    padding: 10px;
+    margin: 20px;
+    
+}
+
+.bloco2{
+    background-color: rgb(79, 170, 197);
+    border: solid rgb(153, 88, 141);
+    margin: 20px;
+    padding: 10px;
+}
+
+.bloco3{
+    background-color: rgb(106, 59, 59);
+    border: solid brown;
+    color: rgb(236, 149, 154);
+    margin: 20px;
+    padding: 10px;
+}
+
+.bloco4{
+    background-color: darkgray;
+    border: solid black;
+    color: dimgray;
+    margin: 20px;
+    padding: 10px;
+}

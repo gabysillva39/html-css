@@ -1,0 +1,21 @@
+body{
+    background-color: rgb(194, 217, 255);
+    font-family: arial;
+}
+.container{
+    background-color: rgb(170, 179, 228);
+    padding: 20px;
+    margin: 20px;
+}
+button{
+    background-color: rgb(84, 90, 159);
+    color: rgb(197, 206, 255);
+    padding: 10px;
+    margin: 5px;
+    border: none;
+}
+.formulario{
+    background-color: rgb(170, 179, 228);
+    padding: 15px;
+    margin: 10px;
+}
