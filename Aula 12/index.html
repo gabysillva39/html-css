@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercícios de HTML Semântico - Maria</title>
+  <style>
+    body { font-family: 'Times New Roman', Times, serif; margin: 0; background-color: #b39fce; line-height: 1.6; }
+    header, footer { background: #554d79; color: rgb(255, 255, 255); text-align: center; padding: 15px; }
+    nav a { color: rgb(255, 255, 255); text-decoration: none; margin: 0 10px; }
+    nav a:hover { text-decoration: underline; }
+    section, article, aside, figure { margin: 20px; padding: 15px; background: rgb(255, 255, 255); border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    aside { background: #604d86; float: right; width: 30%; }
+ figure img {width: 30%;border-radius: 8px;display: block;margin: 0 auto;}
+    figcaption { text-align: center; font-style: italic; margin-top: 5px; }
+    details { background: #422761; margin: 10px 0; padding: 10px; border-radius: 8px; }
+    mark { background: #8279bb; }
+    time { color: #ffffff; font-style: italic; }
+    h1, h2, h3 { color: #c5aaf0; font-family: 'Times New Roman', Times, serif; }
+    .clearfix::after { content: ""; display: block; clear: both; }
+  </style>
+</head>
+<body>
+
+
+  <!-- EXERCÍCIO 3 + 4: Cabeçalho e Navegação -->
+  <header>
+    <h1>Site da gaby</h1>
+    <p>Venha explorar o site🎶</p>
+    <nav>
+      <a href="#hobbies">Hobbies</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#pais">Sobre o País</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#blog">Blog</a>
+      <a href="#faq">FAQ</a>
+      <a href="#portfolio">Portfólio</a>
+    </nav>
+  </header>
+
+  <main class="clearfix">
+
+    <!-- EXERCÍCIO 1: SECTIONS -->
+    <section id="hobbies">
+      <h2>Meus Hobbies!</h2>
+
+      <section>
+        <h3>Jogar vídeo game</h3>
+        <p>Zerar e subir em jogos é uma coisa que me deixa feliz.</p>
+      </section>
+
+      <section>
+        <h3>Escutar música</h3>
+        <p>Gosto de ouvir músicas boas que me tocam de certa forma.</p>
+      </section>
+
+      <section>
+        <h3>Cozinhar</h3>
+        <p>Cozinho quase todos os dias!</p>
+      </section>
+    </section>
+
+    <!-- EXERCÍCIO 2: ARTICLES -->
+    <section id="reviews">
+      <h2>Reviews de Jogos.🎮</h2>
+
+      <article>
+        <h3>The last of us</h3>
+        <p>Um jogo de história, zumbis com dois principais personagens.</p>
+        <p>Missões bem guiadas, troféus fáceis e história boa.</p>
+      </article>
+
+      <article>
+        <h3>Overwatch</h3>
+        <p>Colorido, cheio de persoangens com diferentes funções.</p>
+        <p>Ótimo jogo para multiplayer, competitivo bom.</p>
+      </article>
+
+      <article>
+        <h3>Fortnite</h3>
+        <p>Jogo fps, multiplayer enorme e boas parcerias.</p>
+        <p>Mapa extenso, variação de personalização.</p>
+      </article>
+    </section>
+
+    <!-- EXERCÍCIO 5: ASIDE -->
+    <section id="pais" class="clearfix">
+      <h2>Sobre a França</h2>
+      <p>A França é um dos países mais influentes do mundo, localizada na Europa Ocidental e conhecida por sua rica história, cultura e arte. Sua capital, Paris, é chamada de “Cidade Luz” e é referência mundial em moda, gastronomia e turismo, abrigando monumentos icônicos como a Torre Eiffel e o Museu do Louvre. A França desempenhou um papel central em eventos históricos, como a Revolução Francesa, que inspirou ideais de liberdade, igualdade e fraternidade. Atualmente, o país é uma potência econômica e política, com forte presença na União Europeia e grande influência global em áreas como ciência, diplomacia e cultura.</p>
+
+      <aside>
+        <h3>Curiosidades</h3>
+        <p>O Louvre é o maior museu de arte do mundo e abriga mais de 35 mil obras, incluindo a famosa Mona Lisa de Leonardo da Vinci.🎨</p>
+      </aside>
+    </section>
+
+    <!-- EXERCÍCIO 6: FIGURE -->
+     <section id="galeria">
+      <h2>Minha Galeria</h2>
+
+      <figure>
+        <img src="https://blog.archtrends.com/wp-content/uploads/2024/07/parisabre.jpeg" alt="Paris">
+        <figcaption>Paris de noite!</figcaption>
+      </figure>
+
+      <figure>
+        <img src="https://media-cdn.tripadvisor.com/media/photo-s/1d/2d/36/0b/amazing-cappuccino-at.jpg" alt="Café">
+        <figcaption>Café saboroso.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="https://i.pinimg.com/736x/ce/07/6d/ce076df606d41c232d25053768a07183.jpg" alt="Almoço">
+        <figcaption>Lanche de um sabádo.</figcaption>
+      </figure>
+    </section>
+
+    <!-- EXERCÍCIO 7: ARTICLE com SECTIONS -->
+    <article id="tutorial">
+      <header>
+        <h2>Tutorial de Bolo caseiro.</h2>
+        <time datetime="2025-10-16">16 de outubro de 2025</time>
+      </header>
+
+      <section>
+        <h3>1.Aprendendo a massa.</h3>
+        <p>Saiba o ponto certo, para um sabor completo.</p>
+      </section>
+
+      <section>
+        <h3>2. Recheio</h3>
+        <p>Adicione mais sabor, com o guia de recheios.</p>
+      </section>
+    </article>
+
+    <!-- EXERCÍCIO 8: BLOG COMPLETO -->
+    <section id="blog">
+      <h2>Blog da Gaby</h2>
+
+      <article>
+        <header>
+          <h3>Meu Primeiro Post</h3>
+          <time datetime="2025-10-15">15/10/2025</time>
+        </header>
+        <section><p>Este é meu primeiro post e estou gostando!</p></section>
+        <footer><p>Por Gaby</p></footer>
+      </article>
+
+      <article>
+        <header>
+          <h3>Dicas de jogos</h3>
+          <time datetime="2025-10-16">16/10/2025</time>
+        </header>
+        <section><p>Tente zerar duas vezes, para conseguir a platina.</p></section>
+        <footer><p>Por Gaby</p></footer>
+      </article>
+    </section>
+
+    <aside>
+      <h3>Posts Populares</h3>
+      <ul>
+        <li>Como fazer carinho em um gato</li>
+        <li>Afinal água é ou não é bebida?</li>
+      </ul>
+    </aside>
+
+    <!-- EXERCÍCIO 9: FAQ com DETAILS -->
+    <section id="faq">
+      <h2>Perguntas Frequentes</h2>
+
+      <details>
+        <summary>O que é HTML?</summary>
+        <p>É a linguagem usada para estruturar páginas web.</p>
+      </details>
+
+      <details>
+        <summary>O que é CSS?</summary>
+        <p>É a linguagem de estilo usada para deixar o site bonito.</p>
+      </details>
+
+      <details>
+        <summary>O que é JavaScript?</summary>
+        <p>É uma linguagem de programação que torna o site interativo.</p>
+      </details>
+
+      <details>
+        <summary>Qual editor usar?</summary>
+        <p>Visual Studio Code é uma ótima opção.</p>
+      </details>
+
+      <details>
+        <summary>Como publicar um site?</summary>
+        <p>Você pode usar plataformas como GitHub Pages.</p>
+      </details>
+    </section>
+
+    <!-- EXERCÍCIO 10: MARK -->
+    <section id="">
+      <h2>Conceito Técnico</h2>
+      <p>O <mark>HTML</mark> é a base de toda a web moderna.</p>
+      <p>Com <mark>CSS</mark>, é possível dar estilo e personalidade às páginas.</p>
+      <p>Já o <mark>JavaScript</mark> traz vida e interatividade ao conteúdo.</p>
+    </section>
+
+    <!-- EXERCÍCIO 11: TIME -->
+    <section id="linha-do-tempo">
+      <h2>Linha do Tempo de Eventos</h2>
+      <article>
+        <h3>Descobrimento do Brasil</h3>
+        <time datetime="1500-04-22">22 de abril de 1500</time>
+      </article>
+      <article>
+        <h3>Independência do Brasil</h3>
+        <time datetime="1822-09-07">7 de setembro de 1822</time>
+      </article>
+      <article>
+        <h3>Proclamação da República</h3>
+        <time datetime="1889-11-15">15 de novembro de 1889</time>
+      </article>
+      <article>
+        <h3>Criação da ONU</h3>
+        <time datetime="1945-10-24">24 de outubro de 1945</time>
+      </article>
+      <article>
+        <h3>Primeira Viagem à Lua</h3>
+        <time datetime="1969-07-20">20 de julho de 1969</time>
+      </article>
+    </section>
+
+
+    <section id="portfolio">
+      <h2>Portfólio Pessoal</h2>
+
+      <section id="sobre">
+        <h3>Sobre Mim</h3>
+        <p>Sou a Gaby, estudante do ensino medio que pretende cursar Farmacia.</p>
+      </section>
+
+      <section id="projetos">
+        <h3>Projetos</h3>
+        <article>
+          <h4>Site da Brisa&Grãos</h4>
+          <p>Projeto em HTML e CSS com cardápio interativo.</p>
+        </article>
+        <article>
+          <h4>Blog pessoal</h4>
+          <p>Criação de um blog com estrutura semântica e design responsivo.</p>
+        </article>
+      </section>
+
+      <section id="habilidades">
+        <h3>Habilidades</h3>
+        <p>Joar video game e assistir filme.</p>
+      </section>
+
+      <aside>
+        <h3>Contato</h3>
+        <p>Email: gaby@exemplo.com</p>
+        <p>Instagram: @gabysilva</p>
+      </aside>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ FINAL -->
+  <footer>
+    <p>&copy; 2025 Gabrielly Silva — Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
