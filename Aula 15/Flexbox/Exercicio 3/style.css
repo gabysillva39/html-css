@@ -1,0 +1,19 @@
+ body {
+    margin: 0;
+    padding: 20px;
+    background: #705d7c;
+}
+
+.container {
+    display: flex;
+    flex-direction: row-reverse; 
+    gap: 15px;
+}
+
+.item {
+    padding: 20px;
+    background: #452c50;
+    color: rgb(204, 187, 220);
+    border-radius: 6px;
+}
+

@@ -1,0 +1,20 @@
+ body {
+    margin: 0;
+    padding: 20px;
+    background: #fafafa;
+}
+
+.galeria {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;          
+    gap: 20px;
+}
+
+.galeria img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+

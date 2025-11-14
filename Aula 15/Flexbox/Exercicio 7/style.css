@@ -1,0 +1,24 @@
+ body {
+    margin: 0;
+    padding: 20px;
+    background: #675176;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end; 
+    gap: 15px;
+}
+
+.item {
+    width: 100px;
+    height: 100px;
+    background: #403055;
+    color: rgb(177, 151, 229);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    border-radius: 8px;
+}
+

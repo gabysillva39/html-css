@@ -1,0 +1,23 @@
+ body {
+    margin: 0;
+    padding: 20px;
+    background: #584d69;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; 
+}
+
+.item {
+    width: 80px;
+    height: 80px;
+    background: #3d2854;
+    color: rgb(181, 159, 208);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border-radius: 8px;
+}
+

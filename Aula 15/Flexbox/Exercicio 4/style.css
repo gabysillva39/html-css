@@ -1,0 +1,27 @@
+ body, html {
+    margin: 0;
+    height: 100%;
+    background: #6d6082;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+    gap: 15px;
+}
+
+.box {
+    width: 120px;
+    height: 120px;
+    background: #432658;
+    color: rgb(179, 139, 212);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-size: 22px;
+}
+

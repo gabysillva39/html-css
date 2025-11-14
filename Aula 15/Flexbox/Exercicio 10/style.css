@@ -1,0 +1,23 @@
+ body {
+    margin: 0;
+    background: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;
+    padding: 30px;
+    background: #372c50;
+    color: white;
+}
+
+.coluna {
+    width: 30%;             
+    text-align: center;
+    padding: 15px;
+    background: #6b5476;
+    border-radius: 8px;
+}
+

@@ -1,0 +1,48 @@
+ body {
+    margin: 0;
+    padding: 20px;
+    background: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;                     
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    width: calc(25% - 20px);              
+    min-width: 180px;                     
+    height: 150px;
+    background: #432e5e;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .card {
+        width: calc(33.33% - 20px);       
+    }
+}
+
+/* Celular */
+@media (max-width: 600px) {
+    .card {
+        width: calc(50% - 20px);          
+    }
+}
+
+/* Celular pequeno */
+@media (max-width: 400px) {
+    .card {
+        width: 100%;                      
+    }
+}
+
